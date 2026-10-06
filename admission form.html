@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI',Arial,sans-serif;
+            scroll-behavior: smooth;
+
+        }
+        :root{
+            --primary:#0b3d91;
+            --secondary:#ffb400;
+            --dark:#1a1a1a;
+            --light:#f5f7fa;
+
+
+        }
+
+        header{
+            display: flex;
+            justify-content:space-between ;
+            align-items: center;
+            padding: 20px 8%;
+            background:white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: static;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+
+        }
+        .logo-area{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+        }
+        .logo-area img{
+            width: 88px;
+            height: 88px;
+            object-fit: contain;
+
+
+        }
+        .logo-text h2{
+            color:navy;
+            font-size: 24px;
+
+        }
+        .logo-text p{
+            color:navy;
+            font-size: 14px;
+
+        }
+        
+        nav a{
+            color: var(--dark);
+            text-decoration: none;
+            margin-left: 25px;
+            
+            font-weight: 600;
+            transition: 0.3s;
+            
+            
+
+        }
+        nav a:hover{
+            /* color: var(--primary); */
+            background-color: var(--primary);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn{
+            background:var(--secondary);
+            color: var(--dark);
+            padding: 12px 25px ;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+
+        }
+        .btn:hover{
+            background: #e0a000;
+            transform: translateY(-2px);
+
+        }
+        .btn-secondary{
+            background: lightgrey;
+            border: 2px solid black;
+            color: black;
+        }
+        .admission .section-title,
+        .admission .section-sub{
+            color: white;
+        }
+        .admission-form{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .admission-submit{
+            width: 100%;
+            margin-top: 20px;
+        }
+        .form-message{
+            text-align: center;
+            margin-top: 15px;
+        }
+        .copyright{
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+        .hero{
+            padding: 200px 8% 120px ;
+            background: linear-gradient(rgba(11,161,145,0.85), rgba(11,161,145,0.85));
+            color:black;
+            text-align: center;
+
+
+
+        }
+        .hero h1{
+            font-size: 56px;
+            margin-bottom: 20px;
+
+
+        }
+        .hero p{
+            font-size: 20px ;
+            margin-bottom: 30px;
+
+        }
+        section{
+            padding: 80px 8%;
+
+        }
+        .section-title{
+            text-align: center;
+            font-size:42px ;
+            color: var(--primary);
+            margin-bottom: 15px;
+
+
+        }
+        .section-sub{
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+
+        }
+        .about-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            gap: 50px;
+            align-items: center;
+
+        }
+        .about-grid img{
+            width: 100%;
+            border-radius: 12px;
+
+        }
+        .grid-3{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+
+        }
+        .card{
+            background: white;
+            padding: 35px 25px ;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--secondary);
+
+        }
+        .card-icon{
+            font-size: 45px;
+            margin-bottom: 15px;
+
+        }
+        .gallery{
+            background: var(--light);
+
+        }
+         .gallery-grid{
+            display: grid;
+                grid-template-columns:repeat(4 ,minmax(0,1fr));
+            gap: 20px;
+
+        }
+        .gallery-items{
+            border-radius: 12px;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+
+        }
+        .gallery-items img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+
+        }
+        .gallery-items img:hover{
+            transform: scale(1.04);
+
+        }
+        .card-icon img{
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+
+        }
+        .admission{
+            background: var(--primary);
+            color: white;
+
+        }
+        .form-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+
+        }
+        .admission input ,.admission select{
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border:none;
+            font-size: 16px;
+
+
+        }
+        footer{
+            background: var(--dark);
+            color: #aaa;
+            padding: 60px 8% 20px;
+
+        }
+        .footer-grid{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:40px;
+            margin-bottom: 40px;
+
+        }
+        footer h4{
+            color:white;
+            margin-bottom: 15px;
+
+
+        }
+        .whatsapp-btn{
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color:white;
+            width: 60px;
+            height:60px;
+            border-radius: 50%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37 ,211 ,102 ,0.4);
+            z-index:9999 ;
+        }
+
+        .whatsapp-btn img{
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            mix-blend-mode: screen;
+        }
+        @media (max-width:900px){
+            .grid-3,.footer-grid,.about-grid,.form-grid {
+                grid-template-columns: 1fr;
+
+            }
+            .gallery-grid{
+                grid-template-columns: repeat(2,minmax(0,1fr));
+
+            }
+            nav {
+                display:none;
+
+            }
+            .hero h1{
+                font-size: 36px;
+
+            }
+        }
+        @media (max-width:540px){
+            .gallery-grid{
+                grid-template-columns: 1fr;
+
+            }
+        }
+    </style>
+</head>
+<body>
+      <header>
+        <div class="logo-area">
+            <img src="picture/logo.jpg" alt="Empiricisim School of Sciences logo">
+            <div class="logo-text">
+                <h2>EMPIRICISIM SCHOOL</h2>
+                <p>OF SCIENCES spinkey palo dare</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="admission form.html">ADMISSION FORM</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+        <a href="#admission" class="btn">apply now</a>
+    </header>
+     <!--hero-->
+    <section class="hero" id="home">
+        <h1>EMPIRICISIM SCHOOL OF SCIENCES</h1>
+        <p>nurturing future scientists, leaders &amp; innovators since 2024</p>
+        <a href="#admission" class="btn">admission open 2026</a>
+        <a href="about.html" class="btn btn-secondary">learn more</a>
+
+    </section>
+     <!--admission form-->
+    <section class="admission" id="admission">
+        <h2 class="section-title">ADMISSION FORM 2026</h2>
+        <p class="section-sub">Limited seats available</p>
+        <form class="contact-form admission-form" id="admissionform" data-admission-form action="/api/admission" method="post">
+            <div class="form-grid">
+                <input type="text" name="student_name" placeholder="student full name" maxlength="120" required>
+                <input type="text" name="father_name" placeholder="father name" maxlength="120" required>
+                <input type="tel" name="whatsapp" placeholder="parent whatsapp number" maxlength="30" required>
+                <input type="email" name="parent_email" placeholder="parent email" maxlength="254" required>
+                <select name="class_name" required>
+                    <option value="">select class</option>
+                    <option value="class nursery">class nursery</option>
+                    <option value="class prep">class prep</option>
+                    <option value="class 1st">class 1st</option>
+                    <option value="class 2nd">class 2nd</option>
+                    <option value="class 3rd">class 3rd</option>
+                    <option value="class 4th">class 4th</option>
+                    <option value="class 5th">class 5th</option>
+                    <option value="class 6th">class 6th</option>
+                    <option value="class 7th">class 7th</option>
+                    <option value="class 8th">class 8th</option>
+                    <option value="class 9th">class 9th</option>
+                    <option value="class 10th">class 10th</option>
+                    <option value="class 1st year">class 1st year</option>
+                    <option value="class 2nd year">class 2nd year</option>
+                </select>
+                <input type="text" name="previous_school" placeholder="previsious school" maxlength="160" required>
+            </div>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+            <button type="submit" class="btn admission-submit">submit application</button>
+            <p id="formMsg" class="form-message" data-form-message role="status" aria-live="polite"></p>
+        </form>
+    </section>
+     <!--footer-->
+    <footer>
+        <div>
+            <h4>EMPIRICISIM SCHOOL</h4>
+            <p>Building tomorrow's scientists with discipline, knowledge and innovation.</p>
+
+        </div>
+        <div>
+            <h4>contact</h4>
+            <p>peshawer , kpk</p>
+            <p>hariskhan007962@gmail.com</p>
+
+        </div>
+        <div>
+            <h4>follow us</h4>
+            <p>facebook  |  instagram  |  youtube  </p>
+
+        </div>
+        <p class="copyright">2026 EMPIRICISIM SCHOOL OF SCIENCES. ALL RIGHTS RESERVED.</p>
+
+    </footer>
+     <!--whatsapp floating button-->
+    <a href="https://wa.me/+923069813379?text=Assalmoalkom, i want information about admission in Empiricisim school of science" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Message the school on WhatsApp" title="Message the school on WhatsApp"><img src="picture/whatsapp.jpg" alt="" aria-hidden="true"></a>
+    <script src="admission.js" defer></script>
+</body>
+</html>
